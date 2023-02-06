@@ -1,6 +1,6 @@
 from enum import Enum
 
-from lib.dypro.modules.normal import (
+from ..dypro.modules.normal import (
     NormalMeanVarChart,
     NormalMeanSChart,
     NormalMeanRChart,

@@ -1,7 +1,6 @@
 from typing import Protocol, Dict, Any
 
-from lib.dypro.modules.normal import NormalMeanVarChart
-from lib.utils import Decimals
+from ..dypro.modules.normal import NormalMeanVarChart
 
 
 class BaseEventHandler(Protocol):
@@ -23,6 +22,9 @@ class DyproEventHandler(BaseEventHandler):
         self.k1 = event["k1"]
         self.k2 = event["k2"]
 
-    @Decimals(decimals=4)
-    def handle(self) -> float:
-        return self.chart.power(self.k1, self.k2, self.sample_size)
+    def handle(self) -> dict[str, Any]:
+        self.power = round(self.chart.power(self.k1, self.k2, self.sample_size), 4)
+        return {
+            "statusCode": 200,
+            "body": f"Lambda was: invoked successfully. Power = {self.power}",
+        }

@@ -1,5 +1,5 @@
 # helper
-from lib.exceptions.event_error_exception import EventKeyError
+from ..exceptions.event_error_exception import EventKeyError
 
 
 EVENT_KEYS = set("sample_size", "k1", "k2")

@@ -4,8 +4,8 @@ from .mean_shift import NormalMeanShift
 from .var_change import NormalVarChange, NormalSChange, NormalRChange
 from .base import BaseChart
 
-sys.path.append("..")
-FACTORS_DIR = "app/lib/dyrop/modules/factors_table.csv"
+sys.path.append("src/dypro/modules/factors_table.csv")
+FACTORS_DIR = "src/dypro/modules/factors_table.csv"
 
 
 class NormalMeanVarChart(BaseChart):

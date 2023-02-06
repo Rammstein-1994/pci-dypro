@@ -3,10 +3,11 @@ import os
 
 import aws_cdk as cdk
 
-from cdk_stack.stack import TemplateStack
+from cdk_stack.stack import DyproLambdaStack
 
 
 app = cdk.App()
-TemplateStack(app, "InfraTemplateStack")
+stack_name = os.environ.get("STACK_NAME", "PCI-Dypro")
+DyproLambdaStack(app, stack_name)
 
 app.synth()
