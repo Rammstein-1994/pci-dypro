@@ -7,6 +7,12 @@ from ..dypro.modules.normal import (
 )
 
 
+class Parameter:
+    k1: float
+    k2: float
+    sample_size: int
+
+
 class ChartType(Enum):
     NormalMeanVar = NormalMeanVarChart
     NormalMeanS = NormalMeanSChart

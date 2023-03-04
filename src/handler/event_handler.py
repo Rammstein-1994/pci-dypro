@@ -3,7 +3,7 @@ from typing import Protocol, Dict, Any
 from ..dypro.modules.normal import NormalMeanVarChart
 
 
-class BaseEventHandler(Protocol):
+class BaseHandler(Protocol):
     """Base class for all event handlers."""
 
     def __init__(self, event):
@@ -13,7 +13,7 @@ class BaseEventHandler(Protocol):
         ...
 
 
-class DyproEventHandler(BaseEventHandler):
+class DyproHandler:
     """Handler for Dypro Lambda."""
 
     def __init__(self, event: Dict[str, Any]) -> None:
