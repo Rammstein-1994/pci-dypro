@@ -1,5 +1,7 @@
 from typing import Protocol, Dict, Any
 
+from aws_xray_sdk.core import xray_recorder
+
 from ..dypro.modules.normal import NormalMeanVarChart
 
 
@@ -22,6 +24,7 @@ class DyproHandler:
         self.k1 = event["k1"]
         self.k2 = event["k2"]
 
+    @xray_recorder.capture("DyproHandler.handle")
     def handle(self) -> dict[str, Any]:
         self.power = round(self.chart.power(self.k1, self.k2, self.sample_size), 4)
         return {

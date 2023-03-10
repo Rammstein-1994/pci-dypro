@@ -1,10 +1,12 @@
 boto3
-aws-lambda-powertools
+aws-lambda-powertools[all]
 jmespath
 numpy
 pandas
 scipy
 black
+pydantic
+aws-xray-sdk
 
 # fomatting check
 flake8

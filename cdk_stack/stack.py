@@ -19,4 +19,5 @@ class DyproLambdaStack(Stack):
             timeout=Duration.seconds(300),
             code=_lambda.DockerImageCode.from_image_asset("."),
             architecture=_lambda.Architecture.ARM_64,
+            tracing=_lambda.Tracing.ACTIVE,
         )
